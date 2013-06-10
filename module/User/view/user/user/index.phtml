@@ -1,0 +1,29 @@
+<h1 class="Title"><?php echo $title; ?></h1>
+<?php
+$title = 'My User';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+    <a href="<?php echo $this->url('user', array('action'=>'add'));?>">Add new game</a>
+</p>
+
+<table class="table">
+<tr>
+    <th>Type</th>
+    <th>Title</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($users as $game) : ?>
+<tr>
+    <td><?php echo $this->escapeHtml($game->type);?></td>
+    <td><?php echo $this->escapeHtml($game->title);?></td>
+    <td>
+        <a href="<?php echo $this->url('user',
+            array('action'=>'edit', 'id' => $game->id));?>">Edit</a>
+        <a href="<?php echo $this->url('user',
+            array('action'=>'delete', 'id' => $game->id));?>">Delete</a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>
