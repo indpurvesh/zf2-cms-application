@@ -26,7 +26,7 @@ class LoginController extends AbstractActionController {
         $authService = $this->serviceLocator->get('auth_service');
         if ($authService->hasIdentity()) {
             // if not log in, redirect to login page
-            return $this->redirect()->toUrl('/main');
+            return $this->redirect()->toUrl('/zf/main');
         }
 
         $form = new Login;
