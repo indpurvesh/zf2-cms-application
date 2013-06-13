@@ -42,7 +42,7 @@ return array(
         'display_exceptions'       => true,
         'doctype'                  => 'HTML5',
         'template_map' => array(
-            'layout/layout'     => __DIR__ . '/../view/layout/layout.phtml',
+            'layout/admin'     => __DIR__ . '/../view/layout/admin.phtml',
             'admin/index/index' => __DIR__ . '/../view/admin/admin/index.phtml',
             'error/404'         => __DIR__ . '/../view/error/404.phtml',
             'error/index'       => __DIR__ . '/../view/error/index.phtml',
