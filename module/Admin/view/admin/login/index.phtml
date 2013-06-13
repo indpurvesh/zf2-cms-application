@@ -1,0 +1,8 @@
+<?php
+$this->headTitle($title);
+$form = $this->form;
+$form->prepare();
+$this->form()->render($form);
+       if (isset($loginMsg[0])): ?>
+	<span class="red">//<?php echo $loginMsg[0]; ?></span><br />
+<?php endif ?>
