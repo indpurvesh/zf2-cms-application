@@ -11,11 +11,12 @@ use Zend\Mvc\Controller\AbstractActionController;
 class AdminActionController extends AbstractActionController {
 
     public function onDispatch(MvcEvent $e) {
-        $authService = $this->serviceLocator->get('auth_admin_service');
+        $routeMatch = $e->getRouteMatch();
         
+        $authService = $this->serviceLocator->get('auth_admin_service');
         if (!$authService->hasIdentity()) {
             // if not log in, redirect to login page
-            return $this->redirect()->toUrl('/zf/admin/admin/login');
+            return $this->redirect()->toUrl('/zf/admin/login/index');
         }
         return parent::onDispatch($e);
     }
